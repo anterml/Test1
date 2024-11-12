@@ -82,7 +82,7 @@ window.addEventListener("DOMContentLoaded", async () => {
       const value = Math.abs(parseInt(diff * 100 - 100))
       const elemValue = elem.querySelector(".diff__value")
       if (elemValue) {
-        elemValue.textContent = `${direction}${value}`
+        elemValue.textContent = `${direction}${value}%`
       }
       elem.style.display = value === 0 ? "none" : ""
     })
@@ -121,9 +121,9 @@ window.addEventListener("DOMContentLoaded", async () => {
 
         diffHtml = `<div class="diff" data-${typeName} data-direction="${direction}">
           <img src="images/arrow-down.svg" />
-          <span class="diff__value">${direction} ${Math.abs(
-          parseInt(diff * 100 - 100),
-        )}</span>
+          <span class="diff__value">
+            ${direction}${Math.abs(parseInt(diff * 100 - 100))}%
+          </span>
         </div>`
       }
 
